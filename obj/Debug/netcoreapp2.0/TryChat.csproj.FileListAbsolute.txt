@@ -1,0 +1,12 @@
+C:\Users\user\Desktop\TryChat\TryChat\bin\Debug\netcoreapp2.0\TryChat.deps.json
+C:\Users\user\Desktop\TryChat\TryChat\bin\Debug\netcoreapp2.0\TryChat.runtimeconfig.json
+C:\Users\user\Desktop\TryChat\TryChat\bin\Debug\netcoreapp2.0\TryChat.runtimeconfig.dev.json
+C:\Users\user\Desktop\TryChat\TryChat\bin\Debug\netcoreapp2.0\TryChat.dll
+C:\Users\user\Desktop\TryChat\TryChat\bin\Debug\netcoreapp2.0\TryChat.pdb
+C:\Users\user\Desktop\TryChat\TryChat\obj\Debug\netcoreapp2.0\TryChat.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\TryChat\TryChat\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\user\Desktop\TryChat\TryChat\obj\Debug\netcoreapp2.0\TryChat.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\TryChat\TryChat\obj\Debug\netcoreapp2.0\TryChat.AssemblyInfo.cs
+C:\Users\user\Desktop\TryChat\TryChat\obj\Debug\netcoreapp2.0\TryChat.dll
+C:\Users\user\Desktop\TryChat\TryChat\obj\Debug\netcoreapp2.0\TryChat.pdb
+C:\Users\user\Desktop\TryChat\TryChat\obj\Debug\netcoreapp2.0\TryChat.csprojResolveAssemblyReference.cache

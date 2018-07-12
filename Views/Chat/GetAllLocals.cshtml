@@ -1,0 +1,180 @@
+﻿@model IEnumerable<TryChat.Models.ApplicationUser>
+
+@{
+    ViewData["Title"] = "GetAllLocals";
+}
+<style>
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    div.rank {
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+    ul.rank {
+        position: absolute;
+        margin-top: 45px;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        display: flex;
+        list-style: none;
+        cursor: pointer;
+    }
+
+        ul.rank > li {
+            float: left;
+            height: 64px;
+            width: 64px;
+            background-image: url(../../images/pizzaBefore.png);
+        }
+
+        ul.rank:hover > li {
+            background-image: url(../../images/pizzaAfter.png);
+        }
+
+
+
+        ul.rank > li:hover ~ li {
+            background-image: url(../../images/pizzaBefore.png);
+        }
+
+        ul.rank > li + li:before {
+            content: "";
+            display: flex;
+            position: absolute;
+            top: -10px;
+            left: 0;
+            right: 0;
+            height: 10px;
+        }
+
+    .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.9);
+        overflow-x: hidden;
+        transition: 0.5s;
+    }
+
+    .overlay-content {
+        position: relative;
+        top: 15%;
+        width: 100%;
+        text-align: center;
+        margin-top: 0px;
+    }
+
+    .overlay a {
+        padding: 8px;
+        text-decoration: none;
+        font-size: 36px;
+        color: #ffd800;
+        display: block;
+        transition: 0.3s;
+    }
+
+
+        .overlay a:hover, .overlay a:focus {
+            color: #f1f1f1;
+        }
+
+    .overlay .closebtn {
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: 60px;
+    }
+
+    @@media screen and (max-height: 450px) {
+        .overlay a {
+            font-size: 20px
+        }
+
+        .overlay .closebtn {
+            font-size: 40px;
+            top: 15px;
+            right: 35px;
+        }
+    }
+</style>
+
+<h2>GetAllLocals</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    <a asp-action="AddNewMessage" asp-route-id="@item.Id">Send Message</a> |
+                </td>
+                <td>
+                    <button id="buttonCrown" style="background-image:url(../../images/crown.svg);width:20px; height:20px;   background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;" onclick="openNav()"></button>
+                </td>
+
+            </tr>
+
+        }
+    </tbody>
+</table>
+<div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+        <h1 class="rank" style="color:yellow">Award your λocal-e in pizza slices!</h1>
+
+        @*<ul class="rank">
+                <li id="pizza1" value="1"></li>
+                <li id="pizza2" value="2"></li>
+                <li id="pizza3" value="3"></li>
+                <li id="pizza4" value="4"></li>
+                <li id="pizza5" value="5"></li>
+            </ul>
+
+
+            <textarea class="rank" maxlength="150" placeholder="Why not leave a message here? ;)" style="margin-top:150px; border: 4px solid yellow;
+        border-radius: 4px; width:60%;height:175px;color:yellow;font:bold;font-size:30px; background-color:transparent;"></textarea>
+
+            <button type="submit">Serve pizza</button>*@
+        @Html.RenderPartialAsync("~/Views/Rating/SetRating.cshtml")
+        
+    </div>
+</div>
+
+<script>
+
+    function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+
+    }
+
+    function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+    }
+</script>
